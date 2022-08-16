@@ -1,3 +1,3 @@
-myFlix-client
+# myFlix-client
 
-App will use React as the frame work and build from the existing myFlix project.
+App will use React as the framework and build on the existing myFlix project.
