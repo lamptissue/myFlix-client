@@ -30391,18 +30391,53 @@ function LoginView(props) {
         console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
                 children: [
-                    "Username:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value)
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: [
+                            "Username:",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                value: username,
+                                onChange: (e)=>setUsername(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 20,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        children: [
+                            "Password:",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "password",
+                                value: password,
+                                onChange: (e)=>setPassword(e.target.value)
+                            }, void 0, false, {
+                                fileName: "src/components/login-view/login-view.jsx",
+                                lineNumber: 28,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/login-view/login-view.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        type: "submit",
+                        onClick: handleSubmit,
+                        children: "Submit"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 19,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this)
                 ]
@@ -30411,39 +30446,22 @@ function LoginView(props) {
                 lineNumber: 17,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                children: [
-                    "Password:",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
-                    }, void 0, false, {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 27,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: "New here? Click to sign up!"
+            }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 25,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                type: "submit",
-                onClick: handleSubmit,
-                children: "Submit"
+                children: "Sign up"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 33,
+                lineNumber: 39,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 16,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 }
 _s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
 _c = LoginView;
