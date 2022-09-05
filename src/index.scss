@@ -1,5 +1,36 @@
 $color: steelblue;
+$color2: pink;
+$color3: red;
 
 .my-flix {
   color: $color;
+}
+// .navbar {
+//   background: $color2;
+// }
+// header {
+//   background: $color2
+// }
+
+.registration {
+  padding-top: 50px;   
+  }
+
+  .login-signup {
+    width: 50%;
+  }
+
+  .movie-poster img {
+    width: 700px;
+  }
+:root {
+  --bs-gutter-x: 0 !important;
+}
+
+.movie-poster img {
+  max-width: 450px;
+}
+
+.movie-view img {
+  text-align: center;
 }
