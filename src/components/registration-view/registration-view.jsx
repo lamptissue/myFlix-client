@@ -9,6 +9,7 @@ import {
   Row,
 } from "react-bootstrap";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 import "./registration-view.scss";
 
@@ -18,12 +19,31 @@ export function RegistrationView(props) {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
+  const [usernameErr, setUsernameErr] = useState("");
+  const [passwordErr, setPasswordErr] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
     // Send a request to the server for authentication, then call props.onLoggedIn(username)
     // props.onLoggedIn(username);
   };
+
+  axios
+    .post("https://lamptissue-movie-flix.herokuapp.com/users", {
+      username: username,
+      password: password,
+      Email: email,
+      Birthday: birthday,
+    })
+    .then((response) => {
+      const data = response.data;
+      console.log(data);
+      window.open("/", "_self"); // the second argument '_self' is necessary so that the page will open in the current tab
+    })
+    .catch((e) => {
+      console.log("error registering the user");
+    });
 
   return (
     <Container className='registration'>
