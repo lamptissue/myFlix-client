@@ -2,4 +2,36 @@
   color: #4682b4;
 }
 
+.registration {
+  padding-top: 50px;
+}
+
+.login-signup {
+  width: 50%;
+}
+
+.movie-poster img {
+  width: 700px;
+}
+
+:root {
+  --bs-gutter-x: 0 !important;
+}
+
+.movie-poster img {
+  max-width: 450px;
+}
+
+.movie-view img {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
 /*# sourceMappingURL=index.ce1d6491.css.map */
