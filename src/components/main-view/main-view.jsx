@@ -1,12 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Row, Col, Container } from "react-bootstrap";
-import {
-  Route,
-  Redirect,
-  Link,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Route, Redirect, BrowserRouter as Router } from "react-router-dom";
 
 import "./main-view.scss";
 
@@ -159,7 +154,7 @@ export class MainView extends React.Component {
               path='/movies/:id'
               render={({ match, history }) => {
                 return (
-                  <Col md={8}>
+                  <Col className='pt-4'>
                     <MovieView
                       movie={movies.find((m) => m._id === match.params.id)}
                       onBackClick={() => history.goBack()}

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import axios from "axios";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import {
   Form,
   Button,
@@ -9,9 +7,11 @@ import {
   Row,
   Col,
   Card,
-  Modal,
+  Figure,
 } from "react-bootstrap";
-import { MovieCard } from "../movie-card/movie-card";
+import moment from "moment";
+import { Link } from "react-router-dom";
+import "./profile-view.scss";
 
 export class ProfileView extends React.Component {
   constructor() {
@@ -85,7 +85,7 @@ export class ProfileView extends React.Component {
   };
 
   deleteUser = (e) => {
-    const confirmDelete = window.confirm("Confirm to remove :(");
+    const confirmDelete = window.confirm("Confirm to remove");
 
     if (confirmDelete) {
       const username = localStorage.getItem("user");
@@ -108,13 +108,13 @@ export class ProfileView extends React.Component {
         });
     }
   };
-  removeFavoriteMovie = (e) => {
+  removeFavoriteMovie = (movieId) => {
     // e.preventDefault();
     const username = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     axios
       .delete(
-        `https://lamptissue-movie-flix.herokuapp.com/users/${username}/movies/${movie}`,
+        `https://lamptissue-movie-flix.herokuapp.com/users/${username}/movies/${movieId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -164,106 +164,117 @@ export class ProfileView extends React.Component {
     return (
       <Container>
         <Row>
-          <Col>
+          <Col lg={5}>
+            <h4>Your Account</h4>
             <Card>
               <Card.Body>
-                <Card.Title>
-                  <h3>Username: {user}</h3>
-                </Card.Title>
-                <br />
-                <Card.Text>{Email}</Card.Text>
-                <Card.Text>Birthday: {Birthday}</Card.Text>
+                <Card.Text>Username: {user}</Card.Text>
+                <Card.Text>Email: {Email}</Card.Text>
+                <Card.Text>
+                  Birthday: {moment(Birthday).format("Do MMMM YYYY")}
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card className='mt-5'>
-              <Card.Body>
-                <Card.Title className='mb-4'>
-                  <h4>Update your details</h4>
-                </Card.Title>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-        <Form>
-          <Form.Group className='mb-3' controlId='formUsername'>
-            <Form.Label>Username:</Form.Label>
-            <Form.Control
-              type='text'
-              name='Username'
-              placeholder={this.state.username}
-              onChange={(e) => this.setUsername(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-4' controlId='formPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type='password'
-              name='Password'
-              placeholder='New Password'
-              onChange={(e) => this.setPassword(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-4' controlId='formEmail'>
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              type='email'
-              name='Email'
-              placeholder={this.state.Email}
-              onChange={(e) => this.setEmail(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className='mb-4' controlId='formBirth'>
-            <Form.Label>Birthday</Form.Label>
-            <Form.Control
-              type='date'
-              name='Birth'
-              placeholder={this.state.Birth}
-              onChange={(e) => this.setBirth(e.target.value)}
-            />
-          </Form.Group>
 
-          <Button
-            variant='outline-danger'
-            type='submit'
-            className='mr-2'
-            onClick={this.updateUser}
-          >
-            Update Profile
-          </Button>
-          <h1>Favourite Movies</h1>
-          <Row className='favorite-movies'>
-            {/*Under created a logic to generate the movies*/}
-            {favoriteMovie.map((movie) => (
-              <li key={movie._id}>{movie.Title}</li>
-            ))}
+          <Col lg={7} className='mb-5'>
+            <h4>Update your details</h4>
+
+            <Card>
+              <Form className='p-4'>
+                <Form.Group className='mb-3' controlId='formUsername'>
+                  <Form.Label>Username:</Form.Label>
+                  <Form.Control
+                    type='text'
+                    name='Username'
+                    placeholder={this.state.username}
+                    onChange={(e) => this.setUsername(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className='mb-4' controlId='formPassword'>
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type='password'
+                    name='Password'
+                    placeholder='New Password'
+                    onChange={(e) => this.setPassword(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className='mb-4' controlId='formEmail'>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type='email'
+                    name='Email'
+                    placeholder={this.state.Email}
+                    onChange={(e) => this.setEmail(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className='mb-4' controlId='formBirth'>
+                  <Form.Label>Birthday</Form.Label>
+                  <Form.Control
+                    type='date'
+                    name='Birth'
+                    placeholder={this.state.Birth}
+                    onChange={(e) => this.setBirth(e.target.value)}
+                  />
+                </Form.Group>
+                <div className='d-flex justify-content-between'>
+                  <Button
+                    variant='primary'
+                    type='submit'
+                    onClick={this.updateUser}
+                  >
+                    Update Profile
+                  </Button>{" "}
+                  <Button
+                    variant='outline-danger'
+                    type='submit'
+                    onClick={this.deleteUser}
+                  >
+                    Delete Profile
+                  </Button>
+                </div>
+              </Form>
+            </Card>
+          </Col>
+        </Row>
+        <>
+          <Row>
+            <Col>
+              <h4>Favourite Movies</h4>
+            </Col>
+
             <Row>
-              <Button
-                variant='outline-danger'
-                onClick={(e) => {
-                  this.removeFavoriteMovie();
-                }}
-              >
-                Remove
-              </Button>
+              {favoriteMovie.map((movie) => (
+                <Col lg={3} md={6} key={movie._id}>
+                  <Figure className='fav-movie mb-4'>
+                    <Link to={`/movies/${movie._id}`}>
+                      <Figure.Image
+                        src={movie.ImagePath}
+                        alt={movie.Title}
+                      ></Figure.Image>
+                      <Figure.Caption className='mb-3'>
+                        {movie.Title}
+                      </Figure.Caption>
+                    </Link>
+
+                    <Button
+                      variant='secondary'
+                      onClick={() => {
+                        this.removeFavoriteMovie(movie._id);
+                      }}
+                    >
+                      Remove
+                    </Button>
+                  </Figure>
+                </Col>
+              ))}
             </Row>
           </Row>
-          <h4>Unhappy?</h4>
-          <Button
-            variant='outline-danger'
-            type='submit'
-            className='mr-2'
-            onClick={this.deleteUser}
-          >
-            Delete Profile
-          </Button>
-        </Form>
+        </>
       </Container>
     );
   }

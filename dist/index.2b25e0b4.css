@@ -1,21 +1,69 @@
 
 
-
-
-
-
-
-
-.my-flix {
-  color: #4682b4;
-}
-
 .registration {
   padding-top: 50px;
 }
 
 .login-signup {
-  width: 50%;
+  width: 30%;
+}
+
+.btn {
+  border-radius: 30px !important;
+}
+
+#round-form {
+  border-radius: 30px;
+}
+
+.movieCard {
+  margin-bottom: 15px;
+  height: 550px !important;
+}
+
+.movieCard figure {
+  text-overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.movieCard figure img {
+  height: 400px;
+}
+
+.link-bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+}
+
+.testCol img {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+#round-form {
+  border-radius: 30px;
+}
+
+.fav-movie {
+  margin-bottom: 15px;
+}
+
+.fav-movie figure {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.fav-movie figure img {
+  height: 400px;
+}
+
+.my-flix {
+  color: #4682b4;
 }
 
 .movie-poster img {

@@ -10,14 +10,20 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card>
-        <Card.Img variant='top' src={movie.ImagePath} />
+      <Card className='movieCard'>
+        <Link to={`/movies/${movie._id}`}>
+          <Card.Img variant='top' src={movie.ImagePath} />
+        </Link>
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant='link'>Read more</Button>
-          </Link>
+          {/* <Card.Text>{movie.Description}</Card.Text> */}
+          <div className='link-bottom'>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant='link' className='p-0'>
+                Read more
+              </Button>
+            </Link>
+          </div>
         </Card.Body>
       </Card>
     );

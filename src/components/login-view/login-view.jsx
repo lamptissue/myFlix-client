@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./login-view.scss";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -22,17 +23,25 @@ export function LoginView(props) {
   const validate = () => {
     let isReq = true;
     if (!username) {
-      setUsernameErr("Username Required");
+      setUsernameErr(<span style={{ color: "red" }}>Username Required!</span>);
       isReq = false;
     } else if (username.length < 2) {
-      setUsernameErr("Username must be 2 characters long");
+      setUsernameErr(
+        <span style={{ color: "red" }}>
+          Username must be 2 characters long!
+        </span>
+      );
       isReq = false;
     }
     if (!password) {
-      setPasswordErr("Password Required");
+      setPasswordErr(<span style={{ color: "red" }}>Password Required!</span>);
       isReq = false;
     } else if (password.length < 6) {
-      setPassword("Password must be 6 characters long");
+      setPassword(
+        <span style={{ color: "red" }}>
+          Password must be 6 characters long!
+        </span>
+      );
       isReq = false;
     }
 
@@ -55,13 +64,13 @@ export function LoginView(props) {
           props.onLoggedIn(data);
         })
         .catch((e) => {
-          console.log("no such user");
+          console.log("No such user");
         });
     }
   };
 
   return (
-    <Container className='registration'>
+    <Container className='registration' lg={4}>
       <Row>
         <Col className='d-flex justify-content-center'>
           <CardGroup className='login-signup'>
@@ -73,6 +82,7 @@ export function LoginView(props) {
                     <Form.Label>Username:</Form.Label>
 
                     <Form.Control
+                      id='round-form'
                       type='text'
                       placeholder='Enter username'
                       value={username}
@@ -81,10 +91,10 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
-
                   <Form.Group controlId='formPassword' className='mb-3'>
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
+                      id='round-form'
                       type='password'
                       placeholder='Password'
                       value={password}
@@ -93,16 +103,22 @@ export function LoginView(props) {
                     {/* code added here to display validation error */}
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
-                  <Button
-                    variant='primary'
-                    type='submit'
-                    onClick={handleSubmit}
-                  >
-                    Submit
-                  </Button>
-
-                  <p className='mt-3'>
-                    <Link to={"/register"}>Sign up</Link>
+                  <div className='d-grid gap-2'>
+                    <Button
+                      className='d-flex justify-content-center'
+                      variant='test'
+                      type='submit'
+                      onClick={handleSubmit}
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                  <p className='mt-4'>
+                    Don't have an account? <br />
+                    <Button className='mt-2' variant='test2' href={"/register"}>
+                      Sign up
+                      {/* Create an account */}
+                    </Button>
                   </p>
                 </Form>
               </Card.Body>
