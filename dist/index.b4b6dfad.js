@@ -38335,159 +38335,123 @@ var _movieCard = require("../movie-card/movie-card");
 class DirectorView extends (0, _reactDefault.default).Component {
     render() {
         const { director , onBackClick , directorMovies  } = this.props;
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
-                className: "director-view",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+            className: "director-view",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        className: "value",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Director: "
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                children: director.Director.Name
                             }, void 0, false, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 13,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 className: "value",
-                                children: director.Director.Name
-                            }, void 0, false, {
+                                children: [
+                                    "Birth: ",
+                                    director.Director.Birth
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 14,
                                 columnNumber: 13
+                            }, this),
+                            director.Director.Death > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "value",
+                                children: [
+                                    "Death: ",
+                                    director.Director.Death
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 17,
+                                columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 12,
                         columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Bio: "
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 17,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: director.Director.Bio
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 18,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/director-view/director-view.jsx",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        className: "value",
+                        children: director.Director.Bio
+                    }, void 0, false, {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 16,
+                        lineNumber: 22,
                         columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    }, this)
+                }, void 0, false, {
+                    fileName: "src/components/director-view/director-view.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                        className: "pt-3",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Birth: "
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: director.Director.Birth
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 22,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, this),
-                    director.Director.Death > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Death: "
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 27,
-                                columnNumber: 15
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: director.Director.Death
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 28,
-                                columnNumber: 15
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 26,
-                        columnNumber: 13
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                 className: "label",
                                 children: [
                                     "Other ",
                                     director.Director.Name,
-                                    " films: "
+                                    " films:"
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 32,
+                                lineNumber: 27,
                                 columnNumber: 13
                             }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: directorMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                            " ",
+                            directorMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                    lg: 4,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                         movie: movie,
                                         children: movie.Title
                                     }, movie._id, false, {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 35,
+                                        lineNumber: 30,
                                         columnNumber: 17
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 33,
-                                columnNumber: 13
-                            }, this)
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 29,
+                                    columnNumber: 15
+                                }, this))
                         ]
                     }, void 0, true, {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 31,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                        className: "mt-4",
-                        onClick: ()=>{
-                            onBackClick();
-                        },
-                        children: "Back"
-                    }, void 0, false, {
-                        fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 11,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+                }, void 0, false, {
+                    fileName: "src/components/director-view/director-view.jsx",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    className: "mt-4",
+                    onClick: ()=>{
+                        onBackClick();
+                    },
+                    children: "Back"
+                }, void 0, false, {
+                    fileName: "src/components/director-view/director-view.jsx",
+                    lineNumber: 37,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "src/components/director-view/director-view.jsx",
             lineNumber: 10,
             columnNumber: 7
@@ -38523,84 +38487,76 @@ class GenreView extends (0, _reactDefault.default).Component {
                 className: "genre-view",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Genre: "
-                            }, void 0, false, {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 13,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            className: "value",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                                 children: genre.Genre.Name
                             }, void 0, false, {
                                 fileName: "src/components/genre-view/genre-view.jsx",
                                 lineNumber: 14,
-                                columnNumber: 13
+                                columnNumber: 15
                             }, this)
-                        ]
-                    }, void 0, true, {
+                        }, void 0, false, {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 13,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 12,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: "Description: "
-                            }, void 0, false, {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 17,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: genre.Genre.Description
-                            }, void 0, false, {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 18,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "value",
+                            children: genre.Genre.Description
+                        }, void 0, false, {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 18,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "label",
-                                children: [
-                                    "Other ",
-                                    genre.Genre.Name,
-                                    " films: "
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                                className: "value",
-                                children: genreMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                        movie: movie,
-                                        children: movie.Title
-                                    }, movie._id, false, {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            className: "label",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: [
+                                        "Other ",
+                                        genre.Genre.Name,
+                                        " films: "
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 22,
+                                    columnNumber: 15
+                                }, this),
+                                genreMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                                        lg: 3,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                            movie: movie,
+                                            children: movie.Title
+                                        }, movie._id, false, {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 25,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, void 0, false, {
                                         fileName: "src/components/genre-view/genre-view.jsx",
                                         lineNumber: 24,
                                         columnNumber: 17
                                     }, this))
-                            }, void 0, false, {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 22,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 21,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 20,
                         columnNumber: 11
@@ -38613,7 +38569,7 @@ class GenreView extends (0, _reactDefault.default).Component {
                         children: "Back"
                     }, void 0, false, {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 11
                     }, this)
                 ]
