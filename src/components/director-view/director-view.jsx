@@ -24,15 +24,17 @@ export class DirectorView extends React.Component {
 
         <Row>
           <Col className='pt-3'>
-            <h3 className='label'>Other {director.Director.Name} films:</h3>{" "}
-            {directorMovies.map((movie) => (
-              <Col lg={4}>
-                <MovieCard key={movie._id} movie={movie}>
-                  {movie.Title}
-                </MovieCard>
-              </Col>
-            ))}
+            <h3 className='label'>Other {director.Director.Name} films:</h3>
           </Col>
+        </Row>
+        <Row>
+          {directorMovies.map((movie) => (
+            <Col lg={4} md={6}>
+              <MovieCard key={movie._id} movie={movie}>
+                {movie.Title}
+              </MovieCard>
+            </Col>
+          ))}
         </Row>
         <Button
           className='mt-4'

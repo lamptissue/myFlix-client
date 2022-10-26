@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Form, Button, Col, Row } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Col,
+  Row,
+  Card,
+  Container,
+  CardGroup,
+} from "react-bootstrap";
 import PropTypes from "prop-types";
 import axios from "axios";
 
@@ -75,73 +83,78 @@ export function RegistrationView() {
   };
 
   return (
-    <Row className='mt-5'>
-      <Col md={12}>
-        <Form>
-          <h3>Sign Up</h3>
-          <p></p>
-          <Form.Group>
-            <Form.Label>Username:</Form.Label>
-            <Form.Control
-              type='text'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder='Enter a username'
-            />
-            {usernameErr && <p>{usernameErr}</p>}
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Password:</Form.Label>
-            <Form.Control
-              placeholder='Enter password'
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {passwordErr && <p>{passwordErr}</p>}
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Email:</Form.Label>
-            <Form.Control
-              type='email'
-              placeholder='Enter email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {emailErr && <p>{emailErr}</p>}
-          </Form.Group>
-
-          <Form.Group>
-            <Form.Label>Birthday:</Form.Label>
-            <Form.Control
-              type='date'
-              name='birthday'
-              placeholder='DD/MM/YYYY'
-              value={birthday}
-              onChange={(e) => setBirthday(e.target.value)}
-            />
-          </Form.Group>
-          <div className='d-grid gap-2 mt-4'>
-            <Button
-              className='d-flex justify-content-center'
-              variant='primary'
-              type='submit'
-              onClick={handleSubmit}
-            >
-              Register
-            </Button>
-          </div>
-          <p></p>
-          <p>
-            Already registered? <br />
-            <Button href={"/"} className='mt-4'>
-              Sign in
-            </Button>
-          </p>
-        </Form>
-      </Col>
-    </Row>
+    <Container className='registration'>
+      <Row>
+        <Col className='d-flex justify-content-center '>
+          <Card className='cardWidth'>
+            <Card.Body>
+              <Card.Title className='text-center mb-4'>Sign Up</Card.Title>
+              <Form>
+                <Form.Group>
+                  <Form.Label className='mt-2'>Username:</Form.Label>
+                  <Form.Control
+                    id='round-form'
+                    type='text'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder='Enter a username'
+                  />
+                  {usernameErr && <p>{usernameErr}</p>}
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label className='mt-2'>Password:</Form.Label>
+                  <Form.Control
+                    id='round-form'
+                    placeholder='Enter password'
+                    type='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  {passwordErr && <p>{passwordErr}</p>}
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label className='mt-2'>Email:</Form.Label>
+                  <Form.Control
+                    id='round-form'
+                    type='email'
+                    placeholder='Enter email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  {emailErr && <p>{emailErr}</p>}
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label className='mt-2'>Birthday:</Form.Label>
+                  <Form.Control
+                    id='round-form'
+                    type='date'
+                    name='birthday'
+                    placeholder='DD/MM/YYYY'
+                    value={birthday}
+                    onChange={(e) => setBirthday(e.target.value)}
+                  />
+                </Form.Group>
+                <div className='d-grid gap-2 mt-4'>
+                  <Button
+                    className='d-flex justify-content-center'
+                    variant='primary'
+                    type='submit'
+                    onClick={handleSubmit}
+                  >
+                    Register
+                  </Button>
+                </div>
+                <p></p>
+                Already registered? <br />
+                <Button href={"/"} className='mt-3'>
+                  Sign in
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 RegistrationView.propTypes = {

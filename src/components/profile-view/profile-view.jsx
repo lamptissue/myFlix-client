@@ -12,6 +12,8 @@ import {
 import moment from "moment";
 import { Link } from "react-router-dom";
 import "./profile-view.scss";
+import { connect } from "react-redux";
+import { setUser, setMovies } from "../../actions/actions";
 
 export class ProfileView extends React.Component {
   constructor() {
@@ -164,7 +166,7 @@ export class ProfileView extends React.Component {
     return (
       <Container>
         <Row>
-          <Col lg={5}>
+          <Col lg={5} className='mb-4'>
             <h4>Your Account</h4>
             <Card>
               <Card.Body>
@@ -279,3 +281,12 @@ export class ProfileView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    movies: state.movies,
+  };
+};
+
+export default connect(mapStateToProps, { setUser, setMovies })(ProfileView);

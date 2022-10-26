@@ -9,7 +9,6 @@ import {
   Row,
 } from "react-bootstrap";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "./login-view.scss";
 
 export function LoginView(props) {
@@ -76,23 +75,19 @@ export function LoginView(props) {
           <CardGroup className='login-signup'>
             <Card>
               <Card.Body>
-                <Card.Title className='text-center'>Login</Card.Title>
+                <Card.Title className='text-center mb-4'>Login</Card.Title>
                 <Form>
-                  <Form.Group controlId='formUsername' className='mb-3'>
-                    <Form.Label>Username:</Form.Label>
-
+                  <Form.Group className='mb-3' controlId='formUsername'>
                     <Form.Control
                       id='round-form'
                       type='text'
-                      placeholder='Enter username'
+                      placeholder='Username'
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                     />
-                    {/* code added here to display validation error */}
                     {usernameErr && <p>{usernameErr}</p>}
                   </Form.Group>
-                  <Form.Group controlId='formPassword' className='mb-3'>
-                    <Form.Label>Password:</Form.Label>
+                  <Form.Group className='mb-3' controlId='formPassword'>
                     <Form.Control
                       id='round-form'
                       type='password'
@@ -106,18 +101,21 @@ export function LoginView(props) {
                   <div className='d-grid gap-2'>
                     <Button
                       className='d-flex justify-content-center'
-                      variant='test'
+                      variant='primary'
                       type='submit'
                       onClick={handleSubmit}
                     >
                       Submit
                     </Button>
                   </div>
-                  <p className='mt-4'>
+                  <p className='mt-5 text-center'>
                     Don't have an account? <br />
-                    <Button className='mt-2' variant='test2' href={"/register"}>
+                    <Button
+                      className='mt-2 d-flex justify-content-center'
+                      variant='primary'
+                      href={"/register"}
+                    >
                       Sign up
-                      {/* Create an account */}
                     </Button>
                   </p>
                 </Form>

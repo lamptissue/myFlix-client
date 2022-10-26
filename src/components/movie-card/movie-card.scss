@@ -1,5 +1,5 @@
 .movieCard {
-    height: 550px!important;
+    min-height: 550px!important;
 
     margin-bottom: 15px;
     figure{
@@ -7,17 +7,18 @@
         overflow: hidden;
         text-overflow: hidden;
         white-space: nowrap;
-        img {
-            height:400px;
-            
-        }
-
     }
-
 }
 
 .link-bottom {
     position: absolute;
     bottom: 10px;
     left: 15px;
+}
+
+.movieCard img {
+    height: auto;
+    max-width: 300px;
+    display:flex;
+    margin: 0 auto
 }

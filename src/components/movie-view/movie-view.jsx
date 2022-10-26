@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Container, Row, Col } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ export class MovieView extends React.Component {
       )
       .then((response) => {
         console.log(response);
-        alert("movie added");
+        alert("Movie added");
       })
       .catch((error) => console.error(error));
   }
@@ -72,3 +72,5 @@ export class MovieView extends React.Component {
     );
   }
 }
+
+export default MovieView;

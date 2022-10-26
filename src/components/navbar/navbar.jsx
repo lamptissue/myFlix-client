@@ -22,25 +22,24 @@ export function Menubar({ user }) {
     <Navbar
       className='main-nav'
       sticky='top'
-      bg='dark'
+      // bg='dark'
       expand='lg'
-      variant='dark'
+      // variant='dark'
     >
       <Container>
         <Navbar.Brand className='navbar-logo' href='/'>
           myFlix
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-        <Navbar.Collapse id='responsive-navbar-nav'>
-          <Nav className='ml-auto'>
+        <Navbar.Collapse
+          id='responsive-navbar-nav'
+          className='justify-content-end'
+        >
+          <Nav>
             {isAuth() && <Nav.Link href='/'>Movies</Nav.Link>}
             {isAuth() && <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>}
-            {isAuth() && (
-              <Button variant='link' onClick={onLoggedOut}>
-                Logout
-              </Button>
-            )}
-            {!isAuth() && <Nav.Link href='/'>Sign-in</Nav.Link>}
+            {isAuth() && <Button onClick={onLoggedOut}>Logout</Button>}
+            {!isAuth() && <Nav.Link href='/'>Login</Nav.Link>}
             {!isAuth() && <Nav.Link href='/register'>Sign-up</Nav.Link>}
           </Nav>
         </Navbar.Collapse>

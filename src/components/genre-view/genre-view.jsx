@@ -20,14 +20,17 @@ export class GenreView extends React.Component {
           <Row>
             <Col className='label'>
               <h3>Other {genre.Genre.Name} films: </h3>
-              {genreMovies.map((movie) => (
-                <Col lg={3}>
-                  <MovieCard key={movie._id} movie={movie}>
-                    {movie.Title}
-                  </MovieCard>
-                </Col>
-              ))}
             </Col>
+          </Row>
+
+          <Row>
+            {genreMovies.map((movie) => (
+              <Col lg={4} md={6}>
+                <MovieCard key={movie._id} movie={movie}>
+                  {movie.Title}
+                </MovieCard>
+              </Col>
+            ))}
           </Row>
 
           <Button

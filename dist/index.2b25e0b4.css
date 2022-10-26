@@ -16,9 +16,22 @@
   border-radius: 30px;
 }
 
+.testCol img {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+#round-form {
+  border-radius: 30px;
+}
+
+.cardWidth {
+  width: 50%;
+}
+
 .movieCard {
   margin-bottom: 15px;
-  height: 550px !important;
+  min-height: 550px !important;
 }
 
 .movieCard figure {
@@ -28,23 +41,17 @@
   overflow: hidden;
 }
 
-.movieCard figure img {
-  height: 400px;
-}
-
 .link-bottom {
   position: absolute;
   bottom: 10px;
   left: 15px;
 }
 
-.testCol img {
-  max-width: 450px;
+.movieCard img {
+  height: auto;
+  max-width: 300px;
   margin: 0 auto;
-}
-
-#round-form {
-  border-radius: 30px;
+  display: flex;
 }
 
 .fav-movie {
@@ -62,16 +69,13 @@
   height: 400px;
 }
 
-.my-flix {
-  color: #4682b4;
-}
-
 .movie-poster img {
   width: 700px;
 }
 
 :root {
   --bs-gutter-x: 0 !important;
+  --bs-navbar-color: $ color3 !important;
 }
 
 .movie-poster img {
@@ -80,6 +84,24 @@
 
 .movie-view img {
   text-align: center;
+}
+
+.navbar {
+  background-color: #9dbeb7;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #585858;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  font-size: 30px !important;
 }
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */

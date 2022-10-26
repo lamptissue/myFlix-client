@@ -1,11 +1,10 @@
-$color: steelblue;
-$color2: pink;
-$color3: red;
+$color: #efe6d5;
+$color2: #9dbeb7;
+$color3: #e73213;
 
 .registration {
     padding-top: 50px;   
  }
-
 
 .login-signup {
      width: 30%;
@@ -13,15 +12,6 @@ $color3: red;
 .btn {
     border-radius: 30px!important;
 }
-// .btn-test {
-//     background-color: $color!important;
-//     color:rgb(57, 50, 50)!important;
-//   }
-
-//   .btn-test2 {
-//     background-color: $color!important;
-//   }
-
   #round-form{
     border-radius: 30px;
   }
